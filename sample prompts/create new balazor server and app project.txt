@@ -1,0 +1,1 @@
+Scaffold the Blazor presentation layer for ServiceFlow using the rules and structure defined in BLAZOR-TEMPLATE-BLUEPRINT.md.

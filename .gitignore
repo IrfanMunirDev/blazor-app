@@ -1,0 +1,27 @@
+# Build output
+**/bin/
+**/obj/
+
+# IDE / editor
+.vs/
+.vscode/
+.idea/
+*.user
+*.suo
+
+# OS
+Thumbs.db
+Desktop.ini
+
+# OpenCode tooling dependencies
+.opencode/node_modules/
+.opencode/package.json
+.opencode/package-lock.json
+
+# Logs & local env
+*.log
+.env
+appsettings.Local.json
+
+# NuGet
+*.nupkg

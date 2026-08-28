@@ -1,0 +1,44 @@
+@page "/jobs"
+
+<PageTitle>ServiceFlow - Jobs</PageTitle>
+
+<h1>Jobs</h1>
+
+<p>Create jobs, assign technicians, set priority and schedule, and track status through completion.</p>
+
+@if (jobs is null)
+{
+    <p><em>No jobs yet. Job management will be connected to the ServiceFlow API in a later milestone.</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Job</th>
+                <th>Customer</th>
+                <th>Status</th>
+                <th>Priority</th>
+                <th>Scheduled</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var job in jobs)
+            {
+                <tr>
+                    <td>@job.Title</td>
+                    <td>@job.Customer</td>
+                    <td>@job.Status</td>
+                    <td>@job.Priority</td>
+                    <td>@job.ScheduledFor.ToString("g")</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<JobSummary>? jobs = null;
+
+    private sealed record JobSummary(string Title, string Customer, string Status, string Priority, DateTime ScheduledFor);
+}

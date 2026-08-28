@@ -1,0 +1,1 @@
+"Scaffold a new project named ServiceFlow using the rules and structure defined in TEMPLATE-BLUEPRINT.md."
