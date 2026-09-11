@@ -1,0 +1,40 @@
+@page "/customers"
+
+<PageTitle>ServiceFlow - Customers</PageTitle>
+
+<h1>Customers</h1>
+
+<p>Manage customer accounts, contacts, and service addresses.</p>
+
+@if (customers is null)
+{
+    <p><em>No customers yet. Customer management will be connected to the ServiceFlow API in a later milestone.</em></p>
+}
+else
+{
+    <table class="table">
+        <thead>
+            <tr>
+                <th>Name</th>
+                <th>Email</th>
+                <th>Phone</th>
+            </tr>
+        </thead>
+        <tbody>
+            @foreach (var customer in customers)
+            {
+                <tr>
+                    <td>@customer.Name</td>
+                    <td>@customer.Email</td>
+                    <td>@customer.Phone</td>
+                </tr>
+            }
+        </tbody>
+    </table>
+}
+
+@code {
+    private List<CustomerSummary>? customers = null;
+
+    private sealed record CustomerSummary(string Name, string Email, string Phone);
+}

@@ -1,0 +1,25 @@
+# Source control
+.git
+.gitignore
+.gitattributes
+
+# IDE / editor
+.idea
+.vscode
+.vs
+
+# OpenCode tooling
+.opencode
+*_user_*.txt
+
+# Build output
+**/bin/
+**/obj/
+
+# Node modules
+node_modules
+**/node_modules
+
+# Runtime artifacts
+*.log
+.env

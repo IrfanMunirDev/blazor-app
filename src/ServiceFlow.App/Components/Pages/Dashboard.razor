@@ -1,0 +1,35 @@
+@page "/dashboard"
+
+<PageTitle>ServiceFlow - Dashboard</PageTitle>
+
+<h1>Dashboard</h1>
+
+<p>Overview of field operations: open jobs, scheduled today, completed, and overdue.</p>
+
+<div class="card-grid">
+    <div class="stat-card">
+        <div class="stat-value">@OpenJobs</div>
+        <div class="stat-label">Open Jobs</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">@ScheduledToday</div>
+        <div class="stat-label">Scheduled Today</div>
+    </div>
+    <div class="stat-card">
+        <div class="stat-value">@CompletedJobs</div>
+        <div class="stat-label">Completed Jobs</div>
+    </div>
+    <div class="stat-card overdue">
+        <div class="stat-value">@OverdueJobs</div>
+        <div class="stat-label">Overdue Jobs</div>
+    </div>
+</div>
+
+<p><em>Metrics will be wired to the ServiceFlow API in a later milestone.</em></p>
+
+@code {
+    private int OpenJobs { get; set; }
+    private int ScheduledToday { get; set; }
+    private int CompletedJobs { get; set; }
+    private int OverdueJobs { get; set; }
+}
