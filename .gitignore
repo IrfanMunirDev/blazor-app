@@ -25,3 +25,5 @@ appsettings.Local.json
 
 # NuGet
 *.nupkg
+# Scratch notes
+for humans to read.txt

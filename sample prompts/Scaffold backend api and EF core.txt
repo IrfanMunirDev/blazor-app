@@ -1,0 +1,19 @@
+Scaffold a new enterprise backend service solution named ServiceFlow.API using .NET 10 based on our standard multi-project blueprint.
+
+Create the following solution and project layout:
+1. Solution: ServiceFlow.API.sln at the workspace root.
+2. Projects in src/:
+   - ServiceFlow.API (ASP.NET Core Web API host)
+   - ServiceFlow.Services (Core business logic layer)
+   - ServiceFlow.Data (EF Core DbContext & repositories)
+   - ServiceFlow.DataModels (Entities & DTOs)
+   - ServiceFlow.Migrations (EF Core migration history)
+   - ServiceFlow.Utils (Shared utilities & extensions)
+   - ServiceFlow.UnitTests & ServiceFlow.FuntionalTests
+
+Configure the following:
+- Link project references: API -> Services & DataModels; Services -> Data & DataModels; Data -> DataModels.
+- In ServiceFlow.DataModels, create core domain entities: Customer, Address, Contact, and Job.
+- In ServiceFlow.API/Program.cs, configure CORS policy "AllowBlazorUI" allowing origins "https://app1dev-lftv0371.b4a.run" with any header/method.
+- Create a multi-stage root Dockerfile for .NET 10 targeting ServiceFlow.API, exposing port 8081.
+- Create .dockerignore and .gitignore files at the repository root.
